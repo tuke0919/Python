@@ -57,12 +57,35 @@ list = [ 'runoob', 786 , 2.23, 'john', 70.2 ]
 #tuple[2] = 1000    # 元组中是非法应用
 list[2] = 1000     # 列表中是合法应用
 
+# 集合Set  可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+student = {'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}
+print(student)
+
+# 成员测试
+if 'Rose' in student:
+    print('Rose 在集合中')
+else:
+    print('Rose 不在集合中')
+
+# set 可以集合运算
+a = set('abracadabra')
+b = set('alacazam')
+
+print(a)
+print(a - b) # 差集
+print(a | b) # 并集
+print(a & b) # 交集
+print(a ^ b) # a和b中不同时存在的元素
+
+
 
 # 字典
 '''
 列表是有序的对象集合，字典是无序的对象集合。
 两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。
 字典用"{ }"标识。字典由索引(key)和它对应的值value组成。
+键(key)必须使用不可变类型。
+在同一个字典中，键(key)必须是唯一的。
 '''
 dict = {}
 dict['one'] = "this is one"
