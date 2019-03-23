@@ -93,6 +93,31 @@ print('dict.values() = ', dict.values())
 print('字典所有值为 = ', list(dict.values()))
 
 
+# 字典的遍历技巧
+
+# 字典遍历时，关键字和对应的值可以使用items方法同时解读出来
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+
+# 在列表遍历时，使用enumerate 同时得到 索引位置和对应的值
+for i, value in enumerate(['tic', 'tac', 'toe']):
+    print(i, value)
+
+# 同时遍历两个或者更多序列，可以使用zip()组合
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy gail', 'blue']
+
+for q, a in zip(questions,answers):
+    print('What is your {0}? It is {1}'.format(q, a))
+
+# 要按顺序遍历一个序列，使用 sorted() 函数返回一个已排序的序列，并不修改原值：
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for f in sorted(set(basket)):
+    print(f)
+
+
+
 
 
 

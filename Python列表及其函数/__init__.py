@@ -124,9 +124,85 @@ random.sort(key=takesecond)
 print ('排序列表：', random)
 
 
+'''
+目录：
+1，将列表当做堆栈使用
+2, 把列表当做队列使用
+3, 列表推导式
+4，嵌套列表解析
+'''
+
+# 1，将列表当做堆栈使用
+stack = [3, 4, 5]
+stack.append(7)
+stack.append(9)
+print('stack = ', stack)
+stack.pop()
+print('pop()后的栈 = ', stack)
 
 
+# 2, 把列表当做队列使用
+from collections import deque
 
+queue = deque(['Eric', 'John', 'Michael'])
+queue.append('Terry')
+queue.append('Graham')
+
+queue.popleft()
+print('popleft = ', queue)
+queue.popleft()
+print('popleft = ', queue)
+
+
+# 3, 列表推导式
+'''
+每个列表推导式都在 for 之后跟一个表达式，然后有零到多个 for 或 if 子句。
+返回结果是一个根据表达从其后的 for 和 if 上下文环境中生成出来的列表。如果希望表达式推导出一个元组，就必须使用括号
+'''
+
+vec = [2, 4, 6]
+newlist = [3*x for x in vec]
+print(newlist)
+
+newlist = [[x, x ** 2] for x in vec]
+print(newlist)
+
+# 对序列里每一个元素逐个调用某方法：
+fresh_fruit = ['   banana  ', '    loganberry', '  passion fruit  ']
+newlist = [weapon.strip() for weapon in fresh_fruit]
+print(newlist)
+
+# 可以用 if 子句作为过滤器
+newlist = [3 * x for x in vec if x > 3]
+print(newlist)
+
+# 4，嵌套列表解析
+
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+# 将3x4的矩阵 转换 成 4x3的列表
+newlist1 = [[row[i] for row in matrix] for i in range(4)]
+print(newlist1)
+
+# 相当于
+transposed = []
+for i in range(4):
+    transposed.append([row[i] for row in matrix])
+print(transposed)
+
+# 相当于
+transposed = []
+for i in range(4):
+    transposed_row = []
+    for row in matrix:
+        transposed_row.append(row[i])
+    transposed.append(transposed_row)
+
+print(transposed)
 
 
 
